@@ -19,7 +19,7 @@ func TestSuccessFactorial(t *testing.T) {
 func TestFailFactorial(t *testing.T) {
 	//arrange
 	n := 6
-	var factorialExpected int = 720
+	var factorialExpected int = 7201
 
 	//act
 	factorial := factorial(n)
