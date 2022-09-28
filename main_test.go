@@ -8,7 +8,7 @@ func TestSuccessFactorial(t *testing.T) {
 	var factorialExpected int = 720
 
 	//act
-	factorial := factorial(n)
+	factorial, _ := factorial(n)
 
 	//assert
 	if factorial != factorialExpected {
@@ -18,14 +18,13 @@ func TestSuccessFactorial(t *testing.T) {
 
 func TestFailFactorial(t *testing.T) {
 	//arrange
-	n := 6
-	var factorialExpected int = 7201
+	n := -1
 
 	//act
-	factorial := factorial(n)
+	factorial, err := factorial(n)
 
 	//assert
-	if factorial != factorialExpected {
-		t.Errorf("Factorial expected value %d got %d ", factorialExpected, factorial)
+	if err == nil {
+		t.Errorf("Expected an error, but got a factorial result: %d ", factorial)
 	}
 }
